@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PromptSidebar } from "@/components/PromptSidebar";
 import { EmptyState } from "@/components/EmptyState";
@@ -38,7 +38,7 @@ const Index = () => {
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Mobile overlay */}
       {drawerOpen && (
-        <div className="fixed inset-0 z-40 bg-foreground/20 lg:hidden" onClick={() => setDrawerOpen(false)} />
+        <div className="fixed inset-0 z-40 bg-foreground/20 backdrop-blur-sm lg:hidden" onClick={() => setDrawerOpen(false)} />
       )}
 
       {/* Sidebar */}
@@ -60,31 +60,32 @@ const Index = () => {
       {/* Main */}
       <div className="flex flex-1 flex-col min-w-0">
         {/* Header */}
-        <header className="flex h-14 items-center gap-3 border-b bg-card px-4 card-shadow shrink-0">
+        <header className="flex h-14 items-center gap-3 border-b border-border/60 bg-card/80 glass px-5 shrink-0">
           <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setDrawerOpen(!drawerOpen)}>
             {drawerOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
           <div className="flex items-center gap-3 min-w-0">
-            <h1 className="font-heading text-lg font-bold text-foreground">Prompt Viewer</h1>
+            <h1 className="font-heading text-lg font-bold text-foreground tracking-tight">Prompt Viewer</h1>
             {index.data?.repository && (
-              <span className="hidden sm:inline text-xs text-muted-foreground font-mono">
+              <span className="hidden sm:inline rounded-md bg-muted/60 border border-border/40 px-2 py-0.5 text-[11px] text-muted-foreground font-mono">
                 {index.data.repository.name} {index.data.repository.version}
               </span>
             )}
           </div>
           <div className="ml-auto">
             {selected ? (
-              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary font-heading">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary font-heading">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 {selected.name}
               </span>
             ) : (
-              <span className="text-xs text-muted-foreground">No prompt selected</span>
+              <span className="text-xs text-muted-foreground/60">No prompt selected</span>
             )}
           </div>
         </header>
 
         {/* Content */}
-        <main className="flex-1 overflow-y-auto p-4 lg:p-6">
+        <main className="flex-1 overflow-y-auto p-5 lg:p-8">
           {!selected ? (
             <EmptyState />
           ) : isComparing ? (
@@ -95,7 +96,7 @@ const Index = () => {
               onClose={handleCloseComparison}
             />
           ) : (
-            <div className="space-y-4 max-w-5xl">
+            <div className="space-y-5 max-w-5xl">
               <PromptOverview prompt={selected} />
               <VersionHistoryList
                 versions={history.data?.versions}

@@ -10,10 +10,15 @@ const statusStyles: Record<string, string> = {
 export function StatusChip({ status, className }: { status: string; className?: string }) {
   return (
     <span className={cn(
-      "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium font-heading",
+      "inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-semibold font-heading capitalize",
       statusStyles[status] ?? "bg-muted text-muted-foreground border-border",
       className
     )}>
+      <span className={cn(
+        "mr-1.5 h-1.5 w-1.5 rounded-full",
+        status === "active" || status === "passed" ? "bg-primary" :
+        status === "deprecated" || status === "failed" ? "bg-destructive" : "bg-muted-foreground"
+      )} />
       {status}
     </span>
   );
