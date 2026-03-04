@@ -1,0 +1,31 @@
+{
+  "id": "summarizer-v1",
+  "name": "summarizer",
+  "group": "text",
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "releasedAt": "2025-06-15T08:00:00Z",
+  "commit": "c9d2b3e",
+  "spec": {
+    "request": {
+      "vendor": "openai",
+      "model": "gpt-3.5-turbo",
+      "parameters": { "temperature": 0.7, "max_tokens": 500 },
+      "messages": [
+        { "role": "system", "content": "Summarize the text." },
+        { "role": "user", "content": "{{input_text}}" }
+      ]
+    },
+    "response": {
+      "content": "The report discusses revenue growth and new products.",
+      "usage": { "prompt_tokens": 200, "completion_tokens": 20, "total_tokens": 220 }
+    },
+    "evaluationResults": {
+      "status": "failed",
+      "evaluations": [
+        { "name": "accuracy", "score": 0.55, "reasoning": "Too vague, missing key details.", "comments": "Needs improvement." },
+        { "name": "conciseness", "score": 0.95, "reasoning": "Very short.", "comments": "Too short, actually." }
+      ]
+    }
+  }
+}

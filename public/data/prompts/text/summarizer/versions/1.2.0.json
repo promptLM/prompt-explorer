@@ -1,0 +1,31 @@
+{
+  "id": "summarizer-v1",
+  "name": "summarizer",
+  "group": "text",
+  "version": "1.2.0",
+  "tag": "v1.2.0",
+  "releasedAt": "2026-02-20T14:30:00Z",
+  "commit": "a3f8c2d",
+  "spec": {
+    "request": {
+      "vendor": "openai",
+      "model": "gpt-4o",
+      "parameters": { "temperature": 0.3, "max_tokens": 1024 },
+      "messages": [
+        { "role": "system", "content": "You are a concise summarizer. Extract key points from the provided text and return them as bullet points. Be thorough but brief." },
+        { "role": "user", "content": "{{input_text}}" }
+      ]
+    },
+    "response": {
+      "content": "• Key finding: revenue increased 15% YoY\n• Customer churn reduced to 3.2%\n• New product line launched in Q3\n• Expansion into APAC markets planned for Q1 2027",
+      "usage": { "prompt_tokens": 342, "completion_tokens": 87, "total_tokens": 429 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "accuracy", "score": 0.95, "reasoning": "All key points correctly extracted from source.", "comments": "Excellent coverage." },
+        { "name": "conciseness", "score": 0.88, "reasoning": "Bullet points are appropriately brief.", "comments": "Could merge related points." }
+      ]
+    }
+  }
+}

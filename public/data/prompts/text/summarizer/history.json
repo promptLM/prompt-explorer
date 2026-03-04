@@ -1,0 +1,10 @@
+{
+  "id": "summarizer-v1",
+  "name": "summarizer",
+  "group": "text",
+  "versions": [
+    { "version": "1.2.0", "tag": "v1.2.0", "releasedAt": "2026-02-20T14:30:00Z", "commit": "a3f8c2d" },
+    { "version": "1.1.0", "tag": "v1.1.0", "releasedAt": "2025-11-05T09:00:00Z", "commit": "b7e1a4f" },
+    { "version": "1.0.0", "tag": "v1.0.0", "releasedAt": "2025-06-15T08:00:00Z", "commit": "c9d2b3e" }
+  ]
+}

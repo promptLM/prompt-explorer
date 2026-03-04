@@ -1,0 +1,30 @@
+{
+  "id": "translator-v1",
+  "name": "translator",
+  "group": "text",
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "releasedAt": "2025-07-01T09:00:00Z",
+  "commit": "e5f6a7b",
+  "spec": {
+    "request": {
+      "vendor": "openai",
+      "model": "gpt-3.5-turbo",
+      "parameters": { "temperature": 0.4, "max_tokens": 1024 },
+      "messages": [
+        { "role": "system", "content": "Translate the text to {{target_language}}." },
+        { "role": "user", "content": "{{input_text}}" }
+      ]
+    },
+    "response": {
+      "content": "El informe habla sobre ingresos y productos.",
+      "usage": { "prompt_tokens": 120, "completion_tokens": 18, "total_tokens": 138 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "fluency", "score": 0.78, "reasoning": "Somewhat literal translation.", "comments": "Acceptable." }
+      ]
+    }
+  }
+}

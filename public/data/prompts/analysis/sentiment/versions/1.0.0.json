@@ -1,0 +1,30 @@
+{
+  "id": "sentiment-v1",
+  "name": "sentiment",
+  "group": "analysis",
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "releasedAt": "2025-04-01T06:00:00Z",
+  "commit": "b8c9d0e",
+  "spec": {
+    "request": {
+      "vendor": "openai",
+      "model": "gpt-3.5-turbo",
+      "parameters": { "temperature": 0.0, "max_tokens": 256 },
+      "messages": [
+        { "role": "system", "content": "Classify the sentiment of the following text as positive, negative, or neutral. Provide a confidence score." },
+        { "role": "user", "content": "{{input_text}}" }
+      ]
+    },
+    "response": {
+      "content": "Sentiment: Positive\nConfidence: 0.87",
+      "usage": { "prompt_tokens": 95, "completion_tokens": 12, "total_tokens": 107 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "accuracy", "score": 0.80, "reasoning": "Correct classification with reasonable confidence.", "comments": "Baseline acceptable." }
+      ]
+    }
+  }
+}

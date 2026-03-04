@@ -1,0 +1,8 @@
+{
+  "id": "sentiment-v1",
+  "name": "sentiment",
+  "group": "analysis",
+  "versions": [
+    { "version": "1.0.0", "tag": "v1.0.0", "releasedAt": "2025-04-01T06:00:00Z", "commit": "b8c9d0e" }
+  ]
+}

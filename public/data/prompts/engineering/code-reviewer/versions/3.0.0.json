@@ -1,0 +1,31 @@
+{
+  "id": "code-reviewer-v1",
+  "name": "code-reviewer",
+  "group": "engineering",
+  "version": "3.0.0",
+  "tag": "v3.0.0",
+  "releasedAt": "2025-10-15T12:00:00Z",
+  "commit": "a7b8c9d",
+  "spec": {
+    "request": {
+      "vendor": "anthropic",
+      "model": "claude-3-sonnet",
+      "parameters": { "temperature": 0.2, "max_tokens": 2048 },
+      "messages": [
+        { "role": "system", "content": "Review the following code and provide feedback on bugs and improvements." },
+        { "role": "user", "content": "{{code_snippet}}" }
+      ]
+    },
+    "response": {
+      "content": "The code has a potential SQL injection issue. Consider using parameterized queries.",
+      "usage": { "prompt_tokens": 650, "completion_tokens": 45, "total_tokens": 695 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "coverage", "score": 0.65, "reasoning": "Only found one of three issues.", "comments": "Needs improvement." },
+        { "name": "actionability", "score": 0.72, "reasoning": "Suggestion is generic.", "comments": "OK." }
+      ]
+    }
+  }
+}

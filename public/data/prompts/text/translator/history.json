@@ -1,0 +1,9 @@
+{
+  "id": "translator-v1",
+  "name": "translator",
+  "group": "text",
+  "versions": [
+    { "version": "2.0.0", "tag": "v2.0.0", "releasedAt": "2026-01-10T11:00:00Z", "commit": "d4e5f6a" },
+    { "version": "1.0.0", "tag": "v1.0.0", "releasedAt": "2025-07-01T09:00:00Z", "commit": "e5f6a7b" }
+  ]
+}

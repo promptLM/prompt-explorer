@@ -1,0 +1,9 @@
+{
+  "id": "code-reviewer-v1",
+  "name": "code-reviewer",
+  "group": "engineering",
+  "versions": [
+    { "version": "3.1.0", "tag": "v3.1.0", "releasedAt": "2026-03-01T16:00:00Z", "commit": "f6a7b8c" },
+    { "version": "3.0.0", "tag": "v3.0.0", "releasedAt": "2025-10-15T12:00:00Z", "commit": "a7b8c9d" }
+  ]
+}
