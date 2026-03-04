@@ -1,0 +1,31 @@
+{
+  "id": "code-reviewer-v1",
+  "name": "code-reviewer",
+  "group": "engineering",
+  "version": "3.1.0",
+  "tag": "v3.1.0",
+  "releasedAt": "2026-03-01T16:00:00Z",
+  "commit": "f6a7b8c",
+  "spec": {
+    "request": {
+      "vendor": "anthropic",
+      "model": "claude-3.5-sonnet",
+      "parameters": { "temperature": 0.1, "max_tokens": 4096 },
+      "messages": [
+        { "role": "system", "content": "You are a senior code reviewer. Analyze the code for bugs, performance issues, security vulnerabilities, and adherence to best practices. Provide actionable feedback." },
+        { "role": "user", "content": "{{code_snippet}}" }
+      ]
+    },
+    "response": {
+      "content": "## Code Review\n\n**Severity: Medium**\n\n1. **SQL Injection Risk** (line 42): Use parameterized queries instead of string concatenation.\n2. **Memory Leak** (line 78): Event listener not cleaned up in useEffect.\n3. **Performance**: Consider memoizing the filtered list computation.",
+      "usage": { "prompt_tokens": 890, "completion_tokens": 210, "total_tokens": 1100 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "coverage", "score": 0.91, "reasoning": "Identified all major issues.", "comments": "Thorough review." },
+        { "name": "actionability", "score": 0.88, "reasoning": "Clear fix suggestions provided.", "comments": "Good." }
+      ]
+    }
+  }
+}

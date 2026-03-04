@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-03-04T10:00:00Z",
+  "repository": {
+    "name": "acme-prompts",
+    "version": "2.4.1",
+    "description": "Curated prompt library for Acme Corp AI services"
+  },
+  "prompts": [
+    {
+      "id": "summarizer-v1",
+      "name": "summarizer",
+      "group": "text",
+      "description": "Summarizes long-form text into concise bullet points.",
+      "status": "active",
+      "latestVersion": "1.2.0",
+      "latestTag": "v1.2.0",
+      "createdAt": "2025-06-15T08:00:00Z",
+      "updatedAt": "2026-02-20T14:30:00Z"
+    },
+    {
+      "id": "translator-v1",
+      "name": "translator",
+      "group": "text",
+      "description": "Translates text between supported languages with context awareness.",
+      "status": "active",
+      "latestVersion": "2.0.0",
+      "latestTag": "v2.0.0",
+      "createdAt": "2025-07-01T09:00:00Z",
+      "updatedAt": "2026-01-10T11:00:00Z"
+    },
+    {
+      "id": "code-reviewer-v1",
+      "name": "code-reviewer",
+      "group": "engineering",
+      "description": "Reviews code for best practices, bugs, and performance issues.",
+      "status": "active",
+      "latestVersion": "3.1.0",
+      "latestTag": "v3.1.0",
+      "createdAt": "2025-05-10T07:00:00Z",
+      "updatedAt": "2026-03-01T16:00:00Z"
+    },
+    {
+      "id": "sentiment-v1",
+      "name": "sentiment",
+      "group": "analysis",
+      "description": "Analyzes sentiment of customer feedback and reviews.",
+      "status": "deprecated",
+      "latestVersion": "1.0.0",
+      "latestTag": "v1.0.0",
+      "createdAt": "2025-04-01T06:00:00Z",
+      "updatedAt": "2025-12-15T10:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "translator-v1",
+  "name": "translator",
+  "group": "text",
+  "version": "2.0.0",
+  "tag": "v2.0.0",
+  "releasedAt": "2026-01-10T11:00:00Z",
+  "commit": "d4e5f6a",
+  "spec": {
+    "request": {
+      "vendor": "openai",
+      "model": "gpt-4o",
+      "parameters": { "temperature": 0.2, "max_tokens": 2048 },
+      "messages": [
+        { "role": "system", "content": "Translate the following text to {{target_language}}. Preserve tone and context." },
+        { "role": "user", "content": "{{input_text}}" }
+      ]
+    },
+    "response": {
+      "content": "El informe analiza el crecimiento de ingresos y los nuevos productos lanzados en el tercer trimestre.",
+      "usage": { "prompt_tokens": 150, "completion_tokens": 35, "total_tokens": 185 }
+    },
+    "evaluationResults": {
+      "status": "passed",
+      "evaluations": [
+        { "name": "fluency", "score": 0.94, "reasoning": "Natural sounding translation.", "comments": "Great." }
+      ]
+    }
+  }
+}
