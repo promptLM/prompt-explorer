@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import type { PromptIndex, PromptHistory, PromptVersion, PromptSummary } from "@/types/prompt";
+import { resolvePath } from "@/lib/resolvePath";
 
 async function fetchJson<T>(url: string): Promise<T> {
-  const res = await fetch(url);
+  const res = await fetch(resolvePath(url));
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.statusText}`);
   return res.json();
 }

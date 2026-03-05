@@ -71,7 +71,7 @@ export function EvaluationPanel({ spec }: { spec: VersionSpec }) {
         {evaluationResults.evaluations.map((ev, i) => (
           <div key={i} className="rounded-lg border border-border/50 p-3">
             <div className="flex items-center justify-between">
-              <span className="font-heading text-sm font-semibold">{ev.name}</span>
+              <span className="font-heading text-sm font-semibold">{ev.name || (ev as any).evaluator || (ev as any).type || `Eval ${i + 1}`}</span>
               <span className="inline-flex items-center rounded-lg bg-primary/10 px-2 py-0.5 font-mono text-sm font-bold text-primary">
                 {(ev.score * 100).toFixed(0)}%
               </span>
